@@ -4,21 +4,21 @@ import java.util.Date;
 
 
 class Ponto {
-	public static void main (String[] args){
-		public Scanner marcador = new Scanner (System.in);
-		public Calendar registro = Calendar.getInstance();
+	private static Scanner marcador = new Scanner (System.in);
+	private static Calendar registro = Calendar.getInstance();
 		
-		public Date horarioEntrada;
-	
-		public void setPoint(int choice) {
-			
-			System.out.println("Bem-vindo a FakeTech E.P. Me diga, você é um: \n[1] Funcionário \n[2] Cliente");
-			
-			choice = marcador.nextInt();
-			
+	public static void main (String[] args){
+		System.out.println("Bem-vindo a FakeTech E.P. Me diga, você é um: \n[1] Funcionário \n[2] Cliente");	
+		
+		int choice = marcador.nextInt();
+		setPoint(choice);
+	}
+		private static void setPoint(int choice) {
+			Date horarioEntrada;
 			if (choice == 1) {
 				System.out.println("Deseja marcar seu ponto de entrada agora? :D \n[1] Sim \n[2] Não");
 				int secondChoice = marcador.nextInt();
+				
 				if (secondChoice == 1) {
 					horarioEntrada = registro.getTime();
 					System.out.println("Horário registrado. " + horarioEntrada);
